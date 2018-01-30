@@ -1,6 +1,6 @@
 # DatePicker demo
 
-> 该依赖于element-ui(1.4.13)、vue-cli构建
+> 该示例项目依赖于element-ui(1.4.13)、vue-cli构建
 
 ### Develop
 
