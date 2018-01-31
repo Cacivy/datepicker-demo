@@ -21,11 +21,11 @@ yarn serve
 
 ```
 npm i element-ui@1.4.13 --save
-npm i https://github.com/wumengqiang/element-datepicker-modified.git --save
+npm i https://github.com/Cacivy/element-datepicker-modified.git --save
 
 // Component ./src/views/Home.vue
-import DatePicker from 'element-datepicker-modified'; // 修改后的DatePicker
-import 'element-ui/lib/theme-default/index.css'; // 引入默认样式
+import DatePicker from 'element-datepicker-modified'; // 修改后的DatePicker并根据需求引入style
+import 'element-datepicker-modified/dist/static/css/index.css'
 
 // Template
 
@@ -34,32 +34,6 @@ import 'element-ui/lib/theme-default/index.css'; // 引入默认样式
   :type="type"
   placeholder="请选择">
 </DatePicker>
-
-// Style 可自定义
-
-.el-quarter-table,
-.el-halfyear-table {
-  td {
-    text-align: center;
-    padding: 20px 3px;
-    cursor: pointer;
-
-    .cell {
-      width: 48px;
-      height: 32px;
-      display: block;
-      line-height: 32px;
-      color: #48576a;
-    }
-
-    &.current:not(.disabled) {
-      .cell {
-        background-color: #20a0ff !important;
-        color: #fff;
-      }
-    }
-  }
-}
 ```
 
 ### Thanks

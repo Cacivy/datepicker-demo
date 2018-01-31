@@ -11,7 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "element-datepicker-modified": "https://github.com/wumengqiang/element-datepicker-modified.git",
+    "element-datepicker-modified": "git+https://github.com/Cacivy/element-datepicker-modified.git",
     "element-ui": "^1.4.13",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.13",

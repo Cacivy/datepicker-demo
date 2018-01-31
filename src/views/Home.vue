@@ -11,6 +11,9 @@
     <DatePicker
       v-model="value"
       :type="type"
+      :style="{widht: '500px'}"
+      ref="datePicker"
+      :picker-options="pickerOptions"
       :placeholder="`请选择${dateTypes[type]}`">
     </DatePicker>
   </div>
@@ -20,8 +23,8 @@
 import { Component, Vue, Watch } from 'vue-property-decorator';
 import DatePicker from 'element-datepicker-modified';
 import { Select, Option } from 'element-ui';
+import 'element-datepicker-modified/dist/static/css/index.css';
 import 'element-ui/lib/theme-default/index.css';
-// import 'element-datepicker-modified/src/scss/index.scss';
 
 const dateTypes = {
   date: '日期',
@@ -43,38 +46,22 @@ export default class Home extends Vue {
   protected dateTypes = dateTypes;
   protected type = 'week';
   protected value = '';
+  protected pickerOptions = {
+    firstDayOfWeek: 3,
+  };
 
   @Watch('type')
   public log() {
     this.value = '';
-    // console.log(this.type);
+    console.log('type', this.type);
+  }
+
+  @Watch('value')
+  public public() {
+    this.$nextTick().then(() => {
+      console.log('value', this.value);
+      console.log('displayValue', (this.$refs.datePicker as any).displayValue);
+    });
   }
 }
 </script>
-
-
-<style lang="scss">
-.el-quarter-table,
-.el-halfyear-table {
-  td {
-    text-align: center;
-    padding: 20px 3px;
-    cursor: pointer;
-
-    .cell {
-      width: 48px;
-      height: 32px;
-      display: block;
-      line-height: 32px;
-      color: #48576a;
-    }
-
-    &.current:not(.disabled) {
-      .cell {
-        background-color: #20a0ff !important;
-        color: #fff;
-      }
-    }
-  }
-}
-</style>
